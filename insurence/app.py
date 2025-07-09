@@ -2,7 +2,15 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-import plotly.express as px
+try:
+    import plotly.express as px
+except ImportError:
+    import subprocess
+    subprocess.check_call(["pip", "install", "plotly"])
+    import plotly.express as px
+
+
+
 try:
     import joblib
 except ImportError:
