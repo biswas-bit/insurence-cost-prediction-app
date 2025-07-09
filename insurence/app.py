@@ -1,9 +1,15 @@
 import streamlit as st
-import joblib
 import pandas as pd
 import numpy as np
 from PIL import Image
 import plotly.express as px
+try:
+    import joblib
+except ImportError:
+    import subprocess
+    subprocess.check_call(["pip", "install", "joblib"])
+    import joblib
+    
 
 # Page Configuration
 st.set_page_config(
